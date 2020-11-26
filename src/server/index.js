@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 // setup the express assets path
 app.use('/', express.static(path.join(__dirname, '../client')))
-
+console.log(__dirname);
 // API calls ------------------------------------------------------------------------------------
 app.get('/', async (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages/home.html'));
