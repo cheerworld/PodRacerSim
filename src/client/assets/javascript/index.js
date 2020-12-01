@@ -315,6 +315,23 @@ function raceProgress(positions) {
 	//let userPlayer = positions.find(e => e.id === store.player_id)
 	//userPlayer.driver_name += " (you)"
 
+	const raceTracks = positions.map(racer => {
+		const completion = racer.segment/201;
+		const completePercentage = completion*100;
+		console.log(completePercentage);
+		return `
+    <div class="racetrack">
+		<div class="race-car" style="bottom:${completion*25}vh">
+		<img src="https://s.clipartkey.com/mpngs/s/188-1887133_car-sprite-car-sprites-for-scratch.png" alt="race car" />
+		</div>
+		<div class="racer-name">
+		<div>${racer.driver_name}</div>
+		<div>${Math.round(completePercentage)}%</div>
+		</div>
+		</div>
+		`
+	}).join('');
+
 	positions = positions.sort((a, b) => (a.segment > b.segment) ? -1 : 1)
 	let count = 1
 
@@ -341,8 +358,13 @@ function raceProgress(positions) {
 	return `
 		<main>
 			<h3>Leaderboard</h3>
-			<section id="leaderBoard">
+			<section id="leaderBoard" class="leaderBoardDisplay">
+			<div class="progressSection">
 				${results}
+				</div>
+				<div class="progressRacetracks">
+				${raceTracks}
+				</div>
 			</section>
 		</main>
 	`

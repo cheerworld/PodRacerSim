@@ -90,6 +90,33 @@ section {
   padding: 30px 0;
 }
 
+.leaderBoardDisplay {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.progressRacetracks {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.racetrack {
+  display: relative;
+  border: 2px red;
+  border-style: none solid;
+  width:70px;
+}
+
+.race-car {
+  display: absolute;
+}
+
+.racer-name {
+
+}
+
 footer {
   height: 200px;
   background-color: black;
