@@ -35,8 +35,7 @@ async function onPageLoad() {
 function setupClickHandlers() {
 	document.addEventListener('click', function(event) {
 		const { target } = event
-		//console.log(target);
-
+////console.log(this)
 		// Race track form field
 		if (target.matches('.card.track')) {
 			handleSelectTrack(target)
@@ -163,7 +162,7 @@ function handleSelectPodRacer(target) {
 
 	// TODO - save the selected racer to the store
 	store.player_id = parseInt(target.id);
-	console.log(store);
+	//console.log(store);
 }
 
 function handleSelectTrack(target) {
@@ -180,7 +179,7 @@ function handleSelectTrack(target) {
 
 	// TODO - save the selected track id to the store
 	store.track_id = parseInt(target.id);
-	console.log(store);
+	//console.log(store);
 
 }
 
@@ -209,14 +208,23 @@ function renderRacerCars(racers) {
 		</ul>
 	`
 }
+//Custom Racer Names
+const customRacerName = {
+	"Racer 1": "Sailor Mars",
+	"Racer 2": "Sailor Moon",
+	"Racer 3": "Chibiusa",
+	"Racer 4": "Sailor Mercury",
+	"Racer 5": "Tuxedo Mask",
+}
 
 function renderRacerCard(racer) {
 	//console.log(racer);
 	const { id, driver_name, top_speed, acceleration, handling } = racer
+	//console.log(driver_name);
 
 	return `
 		<li class="card podracer" id="${id}">
-			<h3>${driver_name}</h3>
+			<h3>${customRacerName[driver_name]}</h3>
 			<p>Top Speed: ${top_speed}</p>
 			<p>Acceleration: ${acceleration}</p>
 			<p>Handling: ${handling}</p>
@@ -241,13 +249,23 @@ function renderTrackCards(tracks) {
 	`
 }
 
+//Custom Track Names
+const customTrackName = {
+	"Track 1": "Moon Kingdom",
+	"Track 2": "The Hell Tree",
+	"Track 3": "Earth Kingdom",
+	"Track 4": "Dark Kingdom",
+	"Track 5": "Dead Moon Circus",
+	"Track 6": "Space-Time",
+}
+
 function renderTrackCard(track) {
-//	console.log(track);
+	//console.log(track);
 	const { id, name } = track
 
 	return `
 		<li id="${id}" class="card track">
-			<h3>${name}</h3>
+			<h3>${customTrackName[name]}</h3>
 		</li>
 	`
 }
@@ -262,7 +280,7 @@ function renderCountdown(count) {
 function renderRaceStartView(track, racers) {
 	return `
 		<header>
-			<h1>Race: ${track.name}</h1>
+			<h1>Race: ${customTrackName[track.name]}</h1>
 		</header>
 		<main id="two-columns">
 			<section id="leaderBoard">
@@ -294,19 +312,27 @@ function resultsView(positions) {
 }
 
 function raceProgress(positions) {
-	let userPlayer = positions.find(e => e.id === store.player_id)
-
-	//console.log(store.player_id)
-	userPlayer.driver_name += " (you)"
+	//let userPlayer = positions.find(e => e.id === store.player_id)
+	//userPlayer.driver_name += " (you)"
 
 	positions = positions.sort((a, b) => (a.segment > b.segment) ? -1 : 1)
 	let count = 1
 
 	const results = positions.map(p => {
+
+		if (p.id === store.player_id) {
+			return  `
+				<tr>
+					<td>
+						<h3>${count++} - ${customRacerName[p.driver_name]} (you)</h3>
+					</td>
+				</tr>
+			`
+		}
 		return `
 			<tr>
 				<td>
-					<h3>${count++} - ${p.driver_name}</h3>
+					<h3>${count++} - ${customRacerName[p.driver_name]}</h3>
 				</td>
 			</tr>
 		`
