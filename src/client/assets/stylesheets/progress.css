@@ -1,45 +1,168 @@
 /* PROGRESS PAGE SPECIFIC STYLES */
-
 /* -------------------  MOBILE  --------------------- */
 header {
-  background-image: linear-gradient(180deg, rgba(238,218,209,0.5),rgba(212,181,176,0.5) ),url('https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg');
+  background-image: linear-gradient(180deg, rgba(238, 218, 209, 0.5), rgba(212, 181, 176, 0.5)), url('https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg');
 }
 
 main#two-columns {
-    margin: 50px 0;
-    display: flex;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 main#two-columns section {
-    max-width: 50vw;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.racetrack {
+  position: relative;
+  border: 2px red;
+  border-style: none solid;
+  width: 45px;
+  height: 110px;
+}
+
+.race-car {
+  position: absolute;
+  background-image: url("https://s.clipartkey.com/mpngs/s/188-1887133_car-sprite-car-sprites-for-scratch.png");
+  height: 50px;
+  width: 40px;
+  background-size: cover;
+}
+
+.racer-name {
+  position: absolute;
+  top: 110px;
+  font-size: 0.75rem;
+  text-align: center;
 }
 
 section#accelerate button {
-    height: 300px;
-    width: 300px;
-    margin: 30px auto;
-    border-radius: 180%;
-    background-color: green;
-    border-color: rgb(14, 166, 6);
-    cursor: pointer;
+  height: 200px;
+  width: 200px;
+  border-radius: 180%;
+  background-color: green;
+  border-color: rgb(14, 166, 6);
+  cursor: pointer;
 }
 
 #big-numbers {
-    font-weight: bolder;
-    font-size: 70px;
+  font-weight: bolder;
+  font-size: 70px;
 }
 
 /* -------------------  TABLET  --------------------- */
 @media (min-width: 768px) {
+  main#two-columns {
+    margin: 50px 0;
+  }
 
+  main#two-columns section#accelerate {
+    flex-direction: column;
+  }
+
+  main#two-columns section#leaderBoard .withBigNum {
+    flex-direction: column;
+  }
+
+  .racetrack {
+    width: 70px;
+    height: 150px;
+  }
+
+  .race-car {
+    height: 75px;
+    width: 60px;
+  }
+
+  .racer-name {
+    top: 150px;
+    font-size: 0.75rem;
+  }
 }
 
 /* -------------------  DESKTOP  -------------------- */
-
 @media (min-width: 1224px) {
+  main#two-columns {
+    margin: 50px 0;
+    flex-direction: row;
+  }
+
+  main#two-columns section {
+    max-width: 50vw;
+    flex-direction: row;
+  }
+
+  main#two-columns section#leaderBoard .withBigNum {
+    flex-direction: column;
+  }
+
+  .racetrack {
+    width: 70px;
+    height: 150px;
+  }
+
+  .race-car {
+    height: 75px;
+    width: 60px;
+  }
+
+  .racer-name {
+    top: 150px;
+    font-size: 0.75rem;
+  }
+
+  main#two-columns section#accelerate {
+    flex-direction: column;
+  }
+
+  section#accelerate button {
+    height: 300px;
+    width: 300px;
+    margin: 30px auto;
+  }
 }
 
 /* -------------------  LARGE SCREENS  -------------- */
-
 @media (min-width: 1824px) {
+  main#two-columns {
+    margin: 50px 0;
+    flex-direction: row;
+  }
+
+  main#two-columns section {
+    max-width: 50vw;
+    flex-direction: row;
+  }
+
+  main#two-columns section#leaderBoard .withBigNum {
+    flex-direction: column;
+  }
+
+  .racetrack {
+    width: 70px;
+    height: 150px;
+  }
+
+  .race-car {
+    height: 75px;
+    width: 60px;
+  }
+
+  .racer-name {
+    top: 150px;
+    font-size: 0.75rem;
+  }
+
+  main#two-columns section#accelerate {
+    flex-direction: column;
+  }
+
+  section#accelerate button {
+    height: 300px;
+    width: 300px;
+    margin: 30px auto;
+  }
 }

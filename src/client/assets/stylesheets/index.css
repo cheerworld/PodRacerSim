@@ -1,7 +1,5 @@
 /* -------------------  GENERAL SITE STYLES --------------------- */
-
 /* -------------------  MOBILE  --------------------- */
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -9,7 +7,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -21,7 +19,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient(180deg, rgba(238,218,209,0.5),rgba(212,181,176,0.5) ), url('https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg');
+  background-image: linear-gradient(180deg, rgba(238, 218, 209, 0.5), rgba(212, 181, 176, 0.5)), url('https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -90,31 +88,50 @@ section {
   padding: 30px 0;
 }
 
+main#two-columns {
+  flex-direction: column;
+}
+
 .leaderBoardDisplay {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
 
+.progressSection {
+  font-size: 1rem;
 }
 
 .progressRacetracks {
-  margin-left: 30px;
   display: flex;
   flex-direction: row;
+  margin-left: 5px;
 }
 
 .racetrack {
-  display: relative;
+  position: relative;
   border: 2px red;
   border-style: none solid;
-  width:70px;
+  width: 45px;
+  height: 110px;
 }
 
 .race-car {
-  display: absolute;
+  position: absolute;
+  background-image: url("https://s.clipartkey.com/mpngs/s/188-1887133_car-sprite-car-sprites-for-scratch.png");
+  height: 50px;
+  width: 40px;
+  background-size: cover;
 }
 
 .racer-name {
+  position: absolute;
+  top: 110px;
+  font-size: 0.75rem;
+  text-align: center;
+}
 
+.startNew {
+  margin: 50px;
 }
 
 footer {
@@ -127,20 +144,108 @@ footer {
   header {
     height: 400px;
   }
+
+  .leaderBoardDisplay {
+    flex-direction: row;
+  }
+}
+
+.progressRacetracks {
+  margin-left: 30px;
+}
+
+.racetrack {
+  width: 70px;
+  height: 150px;
+}
+
+.race-car {
+  height: 75px;
+  width: 60px;
+}
+
+.racer-name {
+  top: 150px;
+  font-size: 0.75rem;
+}
+
+section#accelerate {
+  flex-direction: column;
+}
 }
 
 /* -------------------  DESKTOP  -------------------- */
-
 @media (min-width: 1224px) {
   header {
     height: 550px;
   }
+
+  .leaderBoardDisplay {
+    flex-direction: row;
+  }
+}
+
+.progressRacetracks {
+  margin-left: 30px;
+}
+
+main#two-columns {
+  flex-direction: row;
+}
+
+.racetrack {
+  width: 70px;
+  height: 150px;
+}
+
+.race-car {
+  height: 75px;
+  width: 60px;
+}
+
+.racer-name {
+  top: 150px;
+  font-size: 0.75rem;
+}
+
+section#accelerate {
+  flex-direction: column;
 }
 
 /* -------------------  LARGE SCREENS  -------------- */
-
 @media (min-width: 1824px) {
   header {
     height: 700px;
+  }
+
+  .leaderBoardDisplay {
+    flex-direction: row;
+  }
+
+  .progressRacetracks {
+    margin-left: 30px;
+  }
+
+  main#two-columns {
+    flex-direction: row;
+  }
+
+  .racetrack {
+    width: 70px;
+    height: 150px;
+  }
+
+  .race-car {
+    height: 75px;
+    width: 60px;
+  }
+
+  .racer-name {
+    top: 150px;
+    font-size: 0.75rem;
+  }
+
+  section#accelerate {
+    flex-direction: column;
   }
 }
