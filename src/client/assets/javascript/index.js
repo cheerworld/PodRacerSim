@@ -338,9 +338,10 @@ function resultsView(positions) {
 		<main>
 			${raceProgress(positions)}
 			<div class="startNew">
-			<a href="/race">Start a new race</a>
+			<a href="/race" class="clickToStart">Start a new race</a>
 			</div>
 		</main>
+		<footer><p class="footerP">🌙✨ Made by Yuguo Zhao ✨🌙</p></footer>
 	`
 }
 
@@ -428,7 +429,10 @@ function defaultFetchOpts() {
 
 function getTracks() {
   // GET request to `${SERVER}/api/tracks`
-  return fetch(`${SERVER}/api/tracks`)
+  return fetch(`${SERVER}/api/tracks`, {
+		method: 'GET',
+		...defaultFetchOpts(),
+	})
     .then(response => response.json())
     //.then(res => console.log(res))
     .catch(err => console.log(err));
@@ -436,7 +440,10 @@ function getTracks() {
 
 function getRacers() {
   // GET request to `${SERVER}/api/cars`
-  return fetch(`${SERVER}/api/cars`)
+  return fetch(`${SERVER}/api/cars`, {
+		method: 'GET',
+		...defaultFetchOpts(),
+	})
     .then(response => response.json())
     //.then(res => console.log(res))
     .catch(err => console.log(err));
@@ -464,7 +471,10 @@ function createRace(player_id, track_id) {
 
 function getRace(id) {
   // GET request to `${SERVER}/api/races/${id}`
-  return fetch(`${SERVER}/api/races/${id}`)
+  return fetch(`${SERVER}/api/races/${id}`, {
+		method: 'GET',
+		...defaultFetchOpts(),
+	})
     .then(response => response.json())
     //.then(res => console.log(res))
     .catch(err => console.log(err));

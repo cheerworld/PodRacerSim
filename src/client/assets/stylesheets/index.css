@@ -131,12 +131,26 @@ main#two-columns {
 }
 
 .startNew {
+  display: flex;
+  justify-content: center;
   margin: 50px;
 }
 
+.clickToStart {
+  font-size: 1.3rem;
+}
+
 footer {
+  display:flex;
+  justify-content: center;
   height: 200px;
   background-color: black;
+}
+
+.footerP {
+  color: #8675a9;
+  padding-top: 70px;
+
 }
 
 /* -------------------  TABLET  --------------------- */
