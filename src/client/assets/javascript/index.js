@@ -50,6 +50,7 @@ function setupClickHandlers() {
 
     // Submit create race form
     if (target.matches('#submit-create-race')) {
+			//console.log(event.cancelable);
       event.preventDefault()
 
       // start race
@@ -82,21 +83,27 @@ async function handleCreateRace() {
       track_id,
       player_id
     } = store;
-    // const race = TODO - invoke the API call to create the race, then save the result
-    const race = await createRace(player_id, track_id);
-    console.log(race);
-    // render starting UI
-    renderAt('#race', renderRaceStartView(race.Track, race.Cars))
-    // TODO - update the store with the race id
-    store.race_id = race.ID - 1;
-    // The race has been created, now start the countdown
-    // TODO - call the async function runCountdown
-    await runCountdown()
-    // TODO - call the async function startRace
-    await startRace(store.race_id);
-    // TODO - call the async function runRace
-    //console.log(store.race_id)
-    await runRace(store.race_id)
+
+		if (!track_id || !player_id) {
+	   alert(`Please select track and racer to start the race!`);
+	 } else {
+		 // const race = TODO - invoke the API call to create the race, then save the result
+     const race = await createRace(player_id, track_id);
+     console.log(race);
+     // render starting UI
+     renderAt('#race', renderRaceStartView(race.Track, race.Cars))
+     // TODO - update the store with the race id
+     store.race_id = race.ID - 1;
+     // The race has been created, now start the countdown
+     // TODO - call the async function runCountdown
+     await runCountdown()
+     // TODO - call the async function startRace
+     await startRace(store.race_id);
+     // TODO - call the async function runRace
+     //console.log(store.race_id)
+     await runRace(store.race_id);
+	 }
+
   } catch (err) {
     console.log("Problem with handleCreateRace ::", err);
   }
@@ -189,10 +196,13 @@ function handleSelectTrack(target) {
 }
 
 async function handleAccelerate() {
+	try {
   console.log("accelerate button clicked")
   // TODO - Invoke the API call to accelerate
   await accelerate(store.race_id)
-
+} catch (err) {
+	console.log("Problem with handleAccelerate ::", error);
+}
 }
 
 // HTML VIEWS ------------------------------------------------
@@ -294,6 +304,7 @@ function renderCountdown(count) {
 }
 
 function renderRaceStartView(track, racers) {
+	console.log(track)
   return `
 		<header>
 			<h1>Race: ${customTrackName[track.name]}</h1>
@@ -338,7 +349,6 @@ function raceProgress(positions) {
   //userPlayer.driver_name += " (you)"
 
   const raceTracks = positions.map(racer => {
-    console.log(racer);
     const completion = racer.segment / 201;
     const completePercentage = completion * 100;
     //console.log(completePercentage);

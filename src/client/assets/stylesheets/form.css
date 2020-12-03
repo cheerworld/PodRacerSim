@@ -49,7 +49,7 @@ form li h3 {
 /* -------------------  LARGE SCREENS  -------------- */
 
 @media (min-width: 1824px) {
-  form ul {
+form ul {
       flex-wrap: nowrap;
       justify-content: left;
   }
