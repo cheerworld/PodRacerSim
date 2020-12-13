@@ -291,7 +291,7 @@ const customTrackName = {
   "Track 2": "The Hell Tree",
   "Track 3": "Earth Kingdom",
   "Track 4": "Dark Kingdom",
-  "Track 5": "Dead Moon Circus",
+  "Track 5": "Pegasus Dream",
   "Track 6": "Space-Time",
 }
 
