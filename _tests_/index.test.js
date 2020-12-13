@@ -1,11 +1,10 @@
-const reusableFuncsFile = require('./../src/client/assets/javascript/reusableFuncsFile');
+const getRace = require('./getRace');
 
-describe("get race", () => {
-  it("It responds with current race stats", async () => {
-    const id =1;
-    const raceinfo = await reusableFuncsFile.getrace(id);
-    expect(raceinfo.body).toHaveProperty("status");
-    expect(raceinfo.body).toHaveProperty("positions");
+//A small unit test for getRace function
+test("get race", async () => {
+  const id =100;
+  const raceinfo = await getRace(id);
+  expect(raceinfo).toHaveProperty("status");
+  expect(raceinfo).toHaveProperty("positions");
 
-  });
-});
+})

@@ -107,29 +107,6 @@ main#two-columns {
   margin-left: 5px;
 }
 
-.racetrack {
-  position: relative;
-  border: 2px red;
-  border-style: none solid;
-  width: 45px;
-  height: 110px;
-}
-
-.race-car {
-  position: absolute;
-  background-image: url("https://s.clipartkey.com/mpngs/s/188-1887133_car-sprite-car-sprites-for-scratch.png");
-  height: 50px;
-  width: 40px;
-  background-size: cover;
-}
-
-.racer-name {
-  position: absolute;
-  top: 110px;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
 .startNew {
   display: flex;
   justify-content: center;
@@ -141,7 +118,7 @@ main#two-columns {
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: center;
   height: 200px;
   background-color: black;
@@ -150,7 +127,6 @@ footer {
 .footerP {
   color: #8675a9;
   padding-top: 70px;
-
 }
 
 /* -------------------  TABLET  --------------------- */
@@ -166,21 +142,6 @@ footer {
 
 .progressRacetracks {
   margin-left: 30px;
-}
-
-.racetrack {
-  width: 70px;
-  height: 150px;
-}
-
-.race-car {
-  height: 75px;
-  width: 60px;
-}
-
-.racer-name {
-  top: 150px;
-  font-size: 0.75rem;
 }
 
 section#accelerate {
@@ -207,21 +168,6 @@ main#two-columns {
   flex-direction: row;
 }
 
-.racetrack {
-  width: 70px;
-  height: 150px;
-}
-
-.race-car {
-  height: 75px;
-  width: 60px;
-}
-
-.racer-name {
-  top: 150px;
-  font-size: 0.75rem;
-}
-
 section#accelerate {
   flex-direction: column;
 }
@@ -242,21 +188,6 @@ section#accelerate {
 
   main#two-columns {
     flex-direction: row;
-  }
-
-  .racetrack {
-    width: 70px;
-    height: 150px;
-  }
-
-  .race-car {
-    height: 75px;
-    width: 60px;
-  }
-
-  .racer-name {
-    top: 150px;
-    font-size: 0.75rem;
   }
 
   section#accelerate {
