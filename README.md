@@ -26,6 +26,20 @@ We have supplied you with the following:
 
 ## Getting Started
 
+Please follow these steps to get started:
+
+1. We'll start with the typical setup - clone this repo and install the dependencies
+
+ - [ ] To clone the repo:
+
+```git clone https://github.com/cheerworld/PodRacerSim.git```
+
+ - [ ] For this project we are using yarn as our package manager, so to install your dependencies run:
+
+```yarn install```
+
+**If you don’t have yarn installed globally, follow their installation documentation here according to your operating system: https://yarnpkg.com/lang/en/docs/install
+
 In order to build this game, we need to run two things: the game engine API and the front end.
 
 ### Start the Server
