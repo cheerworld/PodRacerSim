@@ -1,8 +1,8 @@
-# Welcome to the One and only UdaciRacer Simulation Game
+# Welcome to the Sailor Moon themed Racer Simulation Game
 
 ## Project Introduction
 
-Here is a game that races car! I used asynchronous skills that I gained in the course with Udacity Intermediate JavaScript in this game.
+Here is a game that races car! I used asynchronous programming skills that I gained in the course with Udacity Intermediate JavaScript in this game. This project emphasizes the use of async code and handling the errors around it.
 
 The game mechanics are this: you select a player and track, the game begins and you accelerate your racer by clicking an acceleration button. As you accelerate so do the other players and the leaderboard live-updates as players change position on the track. The final view is a results page displaying the players' rankings.
 
@@ -14,21 +14,17 @@ The game has three main views:
 
 3. The race results view
 
-## Starter Code
+## HTML Views
 
-We have supplied you with the following:
-
-1. An API. The API is provided in the form of a binary held in the bin folder. You never need to open the binary file, as there are no edits you can make to it. Your work will be 100% in the front end.
-
-2. HTML Views.
 ![Race Sim Image](./webImage/racechoice.PNG)
 ![Race Sim Image](./webImage/raceImage.PNG)
+
 
 ## Getting Started
 
 Please follow these steps to get started:
 
-1. We'll start with the typical setup - clone this repo and install the dependencies
+1. Clone this repo and install the dependencies
 
  - [ ] To clone the repo:
 
@@ -40,7 +36,7 @@ Please follow these steps to get started:
 
 **If you don’t have yarn installed globally, follow their installation documentation here according to your operating system: https://yarnpkg.com/lang/en/docs/install
 
-In order to build this game, we need to run two things: the game engine API and the front end.
+In order to run this game, we need to run two things: the game engine API and the front end.
 
 ### Start the Server
 
@@ -68,15 +64,12 @@ Note that this process will use your terminal tab, so you will have to open a ne
 
 First, run your preference of `npm install && npm start` or `yarn && yarn start` at the root of this project. Then you should be able to access http://localhost:3000.
 
-## Project Requirements
-
-This code base has directions for you in `src/client/assets/javascript/index.js`.
 
 ### API Calls
 
 I made calls to the API using fetch requests. The API calls are all at the bottom of the file: `src/client/assets/javascript/index.js`.
 
-Below are a list of the API endpoints and the shape of the data they return. These are all of the endpoints you need to complete the game. Consult this information often as you complete the project:
+Below are a list of the API endpoints and the shape of the data they return.
 
 [GET] `api/tracks`
 List of all tracks
